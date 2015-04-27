@@ -1,0 +1,83 @@
+<ion-slide-box on-slide-changed="slideHasChanged($index)">
+
+  <ion-slide class="padding">
+    <div class="box blue">
+      <h1 class="text-center" style="margin-top:30px; ">Здравей!</h1>
+      <div class="card">
+        <div class="item item-text-wrap">
+          това ще е една заглавна страничка
+        </div>
+      </div>
+    </div>
+  </ion-slide>
+
+  <ion-slide class="padding">
+    <div class="box blue">
+      <h1 class="text-center" style="margin-top:30px; ">За нас</h1>
+      <div class="card">
+        <div class="item item-text-wrap">
+          тук ще има текст, който да разкаже за нас + едно селжи
+        </div>
+      </div>
+    </div>
+  </ion-slide>
+
+  <ion-slide class="padding">
+    <div class="box blue">
+      <h1 class="text-center" style="margin-top:30px; ">Какво е wwapp</h1>
+      <div class="card">
+        <div class="item item-text-wrap">
+          тук ще има текст, който да обясни идеята на приложението
+        </div>
+      </div>
+    </div>
+  </ion-slide>
+
+  <ion-slide class="padding">
+    <div class="box blue">
+      <h1 class="text-center" style="margin-top:30px; ">Контролните</h1>
+      <div class="card">
+        <div class="item item-text-wrap">
+          тук ще се покаже урок на екрана с контролните + скрийншот
+        </div>
+      </div>
+    </div>
+  </ion-slide>
+
+  <ion-slide class="padding">
+    <div class="box blue">
+      <h1 class="text-center" style="margin-top:30px; ">Въпроси</h1>
+      <div class="card">
+        <div class="item item-text-wrap">
+          тук ще се покаже един примерен въпрос с 4 отговора
+        </div>
+      </div>
+    </div>
+  </ion-slide>
+
+  <ion-slide class="padding">
+    <div class="box blue">
+      <h1 class="text-center" style="margin-top:30px; ">Отговорите</h1>
+      <div class="card">
+        <div class="item item-text-wrap">
+          тук ще се покаже един преминал въпрос - обявяването на отговора
+        </div>
+      </div>
+    </div>
+  </ion-slide>
+
+  <!-- Last slide -->
+  <ion-slide class="padding">
+    <div class="card">
+      <div class="item text-center">
+        Въведи твоето име и нека изпитването започне!
+      </div>
+      <label class="item item-input">
+        <input type="text" placeholder="Въведи твоето име тук" ng-model="name">
+      </label>
+      <div class="item">
+        <a class="button button-block button-positive" ng-click="enter(name)">Вход</a>
+      </div>
+    </div>
+  </ion-slide>
+</ion-slide-box>

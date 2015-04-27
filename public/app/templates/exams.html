@@ -1,0 +1,20 @@
+<ion-pane>
+   <ion-header-bar class="bar-light">
+     <h1 class="title">Контролни</h1>
+   </ion-header-bar>
+   <ion-content>
+     <div class="list card" ng-repeat="exam in exams">
+        <div class="item">
+          <h2>{{exam.title}}</h2>
+        </div>
+        <div class="item item-body">
+          <img ng-show="exam.image" style="width:100%" ng-src="{{exam.image}}" alt="Webloz Logo" />
+          <p>{{exam.description}}</p>
+        </div>
+        <a class="item item-icon-left" ui-sref="exam({exam_id : exam._id})">
+          <i class="icon ion-share"></i>
+          Влез
+        </a>
+      </div>
+   </ion-content>
+ </ion-pane>

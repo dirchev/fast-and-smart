@@ -1,0 +1,21 @@
+{
+  "name": "fastandsmart",
+  "main": "server.js",
+  "version": "0.0.0",
+  "authors": [
+    "Dimitar Mirchev <dimitar.mirchev96@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "angular-ui-router": "~0.2.14",
+    "angular-local-storage": "~0.1.5"
+  }
+}

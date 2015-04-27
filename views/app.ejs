@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="/ionic/css/ionic.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="/ionic/js/ionic.bundle.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+    <!-- your app's js -->
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers/home.js"></script>
+    <script src="/app/controllers/exam.js"></script>
+    <script src="/app/controllers/exams.js"></script>
+
+    <script src="/app/services/user.js"></script>
+    <script src="/app/services/exam.js"></script>
+  </head>
+  <body ng-app="wwapp">
+    <ion-nav-view></ion-nav-view>
+
+    <script src="/socket.io/socket.io.js"></script>
+  </body>
+
+</html>

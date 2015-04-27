@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1>{{exam.title}}</h1>
+</div>
+<div ng-show="step === 'question'" class="panel panel-default">
+  <div class="panel-body">
+    <h4>{{question.text}}</h4>
+    <p>
+      {{question.answer}}
+    </p>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="option in question.options">{{option.text}}</li>
+    </ul>
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-default" ng-click="startQuestion()">Пусни въпроса</button>
+    </div>
+  </div>
+</div>
+
+<div ng-show="step === 'answer'">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <button type="button" class="btn btn-default" ng-click="showAnswer()">
+        Покажи отговор
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<ion-pane>
+   <ion-header-bar class="bar-stable">
+     <h1 class="title">{{exam.title}}</h1>
+   </ion-header-bar>
+   <ion-content>
+     <div ng-show="step === 'waiting'">
+       <div class="card">
+         <div class="item item-text-wrap">
+           <h3>Малко ще изчакаме</h3>
+           <p>
+             В момента изчакваме всички потребители да влязат. Все пак изпитването е мегаяко и вратата е задръстена.
+           </p>
+         </div>
+       </div>
+     </div>
+     <div ng-show="step === 'question'">
+       <div class="card">
+         <div class="item item-text-wrap">
+           <h3>Въпрос номер {{question.position}}</h3>
+           <p>
+             {{question.text}}
+           </p>
+         </div>
+       </div>
+
+       <div class="card list">
+         <a class="item" ng-repeat="option in question.options" ng-click="answerQuestion(option.value)">{{option.text}}</a>
+       </div>
+     </div>
+
+     <div ng-show="step === 'afterquestion'">
+       <div class="card">
+         <div class="item item-text-wrap">
+           <h3>Браво!</h3>
+           <p>
+             А дали наистина си за браво ще разберем, когато всички отговорят.
+           </p>
+         </div>
+       </div>
+     </div>
+
+     <div ng-show="step === 'answer'">
+       <div class="card">
+         <div class="item item-text-wrap">
+           <h3>Да видим и отговора!</h3>
+         </div>
+       </div>
+
+       <div class="card">
+         <div class="item item-text-wrap">
+           <p>
+             Правилен отговор: {{answer}}
+           </p>
+         </div>
+       </div>
+     </div>
+   </ion-content>
+ </ion-pane>

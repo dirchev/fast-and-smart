@@ -1,0 +1,103 @@
+<div class="jumbotron">
+  <h1>Изпити</h1>
+  <p>От тук може да добавяте нови изпити, въпроси и т.н.</p>
+  <a class="btn btn-primary" data-toggle="modal" data-target="#newExamModal">Добави изпит</a>
+</div>
+
+<div class="panel panel-default" ng-repeat="exam in exams">
+  <div class="panel-body">
+    <h3>{{exam.title}}</h3>
+    <p>
+      {{exam.desctiption}}
+    </p>
+    <h4>Въпроси ({{exam.questions.length}})</h4>
+    <div ng-repeat="question in exam.questions">
+      <b>{{question.text}}</b> <a ng-click="deleteQuestion(exam._id, question._id)">Изтрий</a>
+      <ul>
+        <li ng-repeat="option in question.options">{{option.text}} : {{option.points}} точки</li>
+      </ul>
+    </div>
+    <a type="button" class="btn btn-primary" ui-sref="exam({exam_id : exam._id})">Започни теста</a>
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-success" ng-click="openQuestionModal(exam._id)">
+        Добави въпрос
+      </button>
+      <button type="button" class="btn btn-danger" ng-click="deleteExam(exam._id)">Изтрий</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newExamModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="">Добави изпит</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="addExam(newExam)">
+          <div class="form-group">
+            <label for="">Заглавие</label>
+            <input type="text" class="form-control" ng-model="newExam.title">
+          </div>
+          <div class="form-group">
+            <label for="">Описание</label>
+            <textarea type="text" class="form-control" ng-model="newExam.description"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="">Постер (урл)</label>
+            <input type="text" class="form-control" ng-model="newExam.image">
+          </div>
+          <button type="submit" class="btn btn-success">Добави</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newQuestionModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="">Добави въпрос</h4>
+      </div>
+      <div class="modal-body">
+        <form ng-submit="addQuestion(newQuestion, options)">
+          <div class="form-group">
+            <label>Въпрос</label>
+            <input type="text" class="form-control" ng-model="newQuestion.text" placeholder="">
+          </div>
+          <div class="form-group">
+            <label>Отговор - разширен</label>
+            <input type="text" class="form-control" ng-model="newQuestion.answer" placeholder="">
+          </div>
+          <h4>Отговори</h4>
+          <div class="form-group">
+            <label>Отговор 1</label>
+            <input type="text" class="form-control" placeholder="Отговор" ng-model="options[0].text">
+            <input type="number" class="form-control" placeholder="Точки" ng-model="options[0].points">
+          </div>
+          <div class="form-group">
+            <label>Отговор 2</label>
+            <input type="text" class="form-control" placeholder="Отговор" ng-model="options[1].text">
+            <input type="number" class="form-control" placeholder="Точки" ng-model="options[1].points">
+          </div>
+          <div class="form-group">
+            <label>Отговор 3</label>
+            <input type="text" class="form-control" placeholder="Отговор" ng-model="options[2].text">
+            <input type="number" class="form-control" placeholder="Точки" ng-model="options[2].points">
+          </div>
+          <div class="form-group">
+            <label>Отговор 4</label>
+            <input type="text" class="form-control" placeholder="Отговор" ng-model="options[3].text">
+            <input type="number" class="form-control" placeholder="Точки" ng-model="options[3].points">
+          </div>
+          <button type="submit" class="btn btn-primary">Добави</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
